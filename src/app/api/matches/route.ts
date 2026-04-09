@@ -1,29 +1,53 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServiceClient } from '@/lib/supabase-server';
-import { verifyToken } from '../admin/route';
+import { verifyToken } from '@/lib/auth';
 
 function auth(req: NextRequest): boolean {
-  const token = req.headers.get('x-admin-token') || '';
+  const token = req.headers.get('x-admin-token');
   return verifyToken(token);
 }
 
 // GET /api/matches — public
 export async function GET() {
   const db = createServiceClient();
-  const { data: matchData } = await db.from('matches').select('*').order('created_at');
-  const { data: scorerData } = await db.from('scorers').select('*').order('minute');
+
+  const { data: matchData, error: matchError } = await db
+    .from('matches')
+    .select('*')
+    .order('created_at');
+
+  if (matchError) {
+    return NextResponse.json({ error: matchError.message }, { status: 500 });
+  }
+
+  const { data: scorerData, error: scorerError } = await db
+    .from('scorers')
+    .select('*')
+    .order('minute');
+
+  if (scorerError) {
+    return NextResponse.json({ error: scorerError.message }, { status: 500 });
+  }
+
   const matches = (matchData || []).map((m) => ({
     ...m,
-    scorers: (scorerData || []).filter((s: { match_id: number }) => s.match_id === m.id),
+    scorers: (scorerData || []).filter(
+      (s: { match_id: number }) => s.match_id === m.id
+    ),
   }));
+
   return NextResponse.json(matches);
 }
 
 // POST /api/matches — create new match (admin)
 export async function POST(req: NextRequest) {
-  if (!auth(req)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!auth(req)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   const body = await req.json();
   const db = createServiceClient();
+
   const { data, error } = await db
     .from('matches')
     .insert({
@@ -38,6 +62,10 @@ export async function POST(req: NextRequest) {
     })
     .select()
     .single();
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
   return NextResponse.json(data);
 }
