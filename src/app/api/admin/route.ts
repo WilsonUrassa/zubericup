@@ -11,7 +11,7 @@ function signToken(payload: object): string {
   return Buffer.from(JSON.stringify({ data, sig })).toString('base64');
 }
 
-export function verifyToken(token: string): boolean {
+function verifyToken(token: string): boolean {
   try {
     const { data, sig } = JSON.parse(Buffer.from(token, 'base64').toString());
     const expected = createHmac('sha256', SECRET).update(data).digest('hex');
