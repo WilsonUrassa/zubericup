@@ -16,7 +16,6 @@ export async function POST(req: NextRequest) {
   const { match_id, team_side, player_name, minute } = await req.json();
   const db = createServiceClient();
 
-  // Insert scorer
   const { data: scorer, error: scorerErr } = await db
     .from('scorers')
     .insert({ match_id, team_side, player_name, minute })
@@ -27,19 +26,27 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: scorerErr.message }, { status: 500 });
   }
 
-  // Increment score
-  const col = team_side === 'A' ? 'score_a' : 'score_b';
-
-  const { data: match } = await db
+  const { data: match, error: matchErr } = await db
     .from('matches')
-    .select(col)
+    .select('score_a, score_b')
     .eq('id', match_id)
     .single();
 
-  await db
-    .from('matches')
-    .update({ [col]: (match?.[col] ?? 0) + 1 })
-    .eq('id', match_id);
+  if (matchErr) {
+    return NextResponse.json({ error: matchErr.message }, { status: 500 });
+  }
+
+  if (team_side === 'A') {
+    await db
+      .from('matches')
+      .update({ score_a: (match?.score_a ?? 0) + 1 })
+      .eq('id', match_id);
+  } else {
+    await db
+      .from('matches')
+      .update({ score_b: (match?.score_b ?? 0) + 1 })
+      .eq('id', match_id);
+  }
 
   return NextResponse.json(scorer);
 }
@@ -59,31 +66,43 @@ export async function DELETE(req: NextRequest) {
 
   const db = createServiceClient();
 
-  // Get scorer before deleting
-  const { data: scorer } = await db
+  const { data: scorer, error: scorerErr } = await db
     .from('scorers')
     .select('*')
     .eq('id', id)
     .single();
 
-  if (!scorer) {
+  if (scorerErr || !scorer) {
     return NextResponse.json({ error: 'Not found' }, { status: 404 });
   }
 
-  await db.from('scorers').delete().eq('id', id);
+  const { error: deleteErr } = await db.from('scorers').delete().eq('id', id);
 
-  const col = scorer.team_side === 'A' ? 'score_a' : 'score_b';
+  if (deleteErr) {
+    return NextResponse.json({ error: deleteErr.message }, { status: 500 });
+  }
 
-  const { data: match } = await db
+  const { data: match, error: matchErr } = await db
     .from('matches')
-    .select(col)
+    .select('score_a, score_b')
     .eq('id', scorer.match_id)
     .single();
 
-  await db
-    .from('matches')
-    .update({ [col]: Math.max(0, (match?.[col] ?? 1) - 1) })
-    .eq('id', scorer.match_id);
+  if (matchErr) {
+    return NextResponse.json({ error: matchErr.message }, { status: 500 });
+  }
+
+  if (scorer.team_side === 'A') {
+    await db
+      .from('matches')
+      .update({ score_a: Math.max(0, (match?.score_a ?? 1) - 1) })
+      .eq('id', scorer.match_id);
+  } else {
+    await db
+      .from('matches')
+      .update({ score_b: Math.max(0, (match?.score_b ?? 1) - 1) })
+      .eq('id', scorer.match_id);
+  }
 
   return NextResponse.json({ ok: true });
 }
