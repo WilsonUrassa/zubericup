@@ -138,9 +138,9 @@ export default function JazaFormuPage() {
               MAELEZO YA MCHUANO
             </div>
             {[
-              ['📅 Msimu', '2025 — Tarehe itajulishwa'],
+              ['📅 Msimu', '2026 — Tarehe itajulishwa'],
               ['📍 Uwanja', 'Uwanja wa Railway, Moshi'],
-              ['⚽ Timu', 'Hadi timu 16 zinashiriki'],
+              ['⚽ Timu', 'Hadi timu 40 zinashiriki'],
               ['🏆 Tuzo', 'Kombe + Medali + Zawadi maalum'],
               ['📞 Maswali', 'Piga simu au tuma ujumbe'],
             ].map(([icon, val]) => (
