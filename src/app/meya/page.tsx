@@ -41,13 +41,13 @@ export default function MeyaPage() {
               Kama kiongozi anayependa michezo na maendeleo ya vijana, alianzisha Zuberi Cup mwaka 2021 kwa lengo la kutoa fursa kwa vijana wa Kilimanjaro kucheza mpira wa miguu kwa viwango vya juu.
             </p>
             <p className="body-text">
-              Chini ya uongozi wake, mchuano umekua kutoka timu 4 mwaka wa kwanza hadi timu 16 msimu wa 2025, ukivutia mashabiki zaidi ya 1,000 kila mwaka.
+              Chini ya uongozi wake, mchuano umekua kutoka timu 16 mwaka wa kwanza hadi timu 40 msimu wa 2025, ukivutia mashabiki zaidi ya 1,000 kila mwaka.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '32px' }}>
               {[
                 { val: '5', key: 'Misimu ya Mchuano' },
-                { val: '16', key: 'Timu 2025' },
+                { val: '40', key: 'Timu 2025' },
                 { val: '1000+', key: 'Mashabiki' },
                 { val: '2021', key: 'Mwaka wa Kuanzishwa' },
               ].map(s => (
@@ -65,7 +65,7 @@ export default function MeyaPage() {
       <section style={{ background: 'var(--dark)', padding: '80px 40px' }}>
         <div className="container">
           <div className="section-label">Matukio</div>
-          <h2 className="section-title">PICHA ZA <span>MEYA</span></h2>
+          <h2 className="section-title">PICHA ZA <span>MEYA - MDHAMINI MKUU WA MASHINDANO.</span></h2>
         </div>
         <div style={{ maxWidth: '1200px', margin: '40px auto 0', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '3px' }}>
           {[
