@@ -177,7 +177,7 @@ export default function LiveMatches({ initialMatches }: { initialMatches: Match[
 
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
             <p style={{ fontFamily: 'Barlow Condensed', fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: 'var(--grey)' }}>
-              Inasasishwa moja kwa moja · Supabase Realtime
+              Inasasishwa moja kwa moja 
             </p>
           </div>
         </div>

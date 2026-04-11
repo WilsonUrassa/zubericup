@@ -34,13 +34,13 @@ export default function HomeClient({ initialMatches, initialNews }: HomeClientPr
   const rest = initialNews.filter(n => !n.featured).slice(0, 2);
 
   const galleryItems = [
-    { src: 'https://zubericup.com/Uwanjarailway.jpg', cap: 'Uwanja wa Railway', sub: 'Makao Makuu ya Mchuano' },
-    { src: 'https://zubericup.com/Meyanakombe.jpg', cap: 'Meya Eng. Zuberi Kidumo', sub: 'na Kombe la Ushindi' },
-    { src: 'https://zubericup.com/Umahiri.jpg', cap: 'Umahiri wa Boli', sub: 'Kipaji cha Vijana wa Kilimanjaro' },
-    { src: 'https://zubericup.com/wadau.jpg', cap: 'Viongozi wa Vilabu', sub: 'Mkutano wa Ufunguzi' },
-    { src: 'https://zubericup.com/keki.jpg', cap: 'Ufunguzi Rasmi', sub: 'Mashindano ya Zuberi Cup' },
-    { src: 'https://zubericup.com/Mstahikimeya.jpg', cap: 'Mstahiki Meya', sub: 'Eng. Zuberi Abdallah Kidumo' },
-    { src: 'https://zubericup.com/meyanamarafiki2.jpg', cap: 'Mashabiki & Furaha', sub: 'Burudani ya Kweli' },
+    { src: 'https:/images/uwanjarailway3.jpg', cap: 'Uwanja wa Railway', sub: 'Makao Makuu ya Mchuano' },
+    { src: 'https:/images/meyanakombe.jpg', cap: 'Meya Eng. Zuberi Kidumo', sub: 'na Kombe la Ushindi' },
+    { src: 'https:/images/umahiri.jpg', cap: 'Umahiri wa Boli', sub: 'Kipaji cha Vijana wa Kilimanjaro' },
+    { src: 'https:/images/uwanja.jpg', cap: 'Uwanja wa Railway', sub: 'Mkutano wa Ufunguzi' },
+    { src: 'https:/images/washindi.jpg', cap: 'Mashindano ya Zuberi Cup', sub: 'Mashindano ya Zuberi Cup' },
+    { src: 'https:/images/mstahikimeya.jpg', cap: 'Mstahiki Meya', sub: 'Eng. Zuberi Abdallah Kidumo' },
+    { src: 'https:/images/meyanamashabikiki2.jpg', cap: 'Mashabiki & Furaha', sub: 'Burudani ya Kweli' },
   ];
 
   return (
@@ -526,16 +526,16 @@ export default function HomeClient({ initialMatches, initialNews }: HomeClientPr
             {/* Images side */}
             <div className="mandela-images">
               <div className="mandela-img-main">
-                <img src="https:/images/Uwanjarailway3.jpg" alt="Uwanja wa Mandela - Mtazamo Mkuu" />
+                <img src="https:/images/uwanjarailway3.jpg" alt="Uwanja wa Mandela - Mtazamo Mkuu" />
                 <div className="mandela-img-tag">Mradi Mkuu · 2026</div>
                 <div className="mandela-stamp">INAJENGWA</div>
               </div>
               <div className="mandela-img-a">
-                <img src="https:/images/Uwanjarailway.jpg" alt="Viwango vya Kimataifa" />
+                <img src="https:/images/uwanjarailway3.jpg" alt="Viwango vya Kimataifa" />
                 <div className="mandela-img-tag">Viwango vya FIFA</div>
               </div>
               <div className="mandela-img-b">
-                <img src="https:/images/Mstahikimeya.jpg" alt="Meya Zuberi Kidumo" />
+                <img src="https:/images/mstahikimeya.jpg" alt="Meya Zuberi Kidumo" />
                 <div className="mandela-img-tag">Msimamizi Mkuu</div>
               </div>
             </div>
@@ -607,7 +607,7 @@ export default function HomeClient({ initialMatches, initialNews }: HomeClientPr
       {/* VENUE — Railway */}
       <section className="venue-section">
         <div className="venue-img-wrap">
-          <img src="https://zubericup.com/Uwanjarailway3.jpg" alt="Uwanja wa Railway" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <img src="https:/images/uwanjarailway3.jpg" alt="Uwanja wa Railway" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
         <div className="venue-info">
           <div className="section-label">Uwanja Mkuu wa Sasa</div>
