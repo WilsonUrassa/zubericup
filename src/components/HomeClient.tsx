@@ -526,16 +526,16 @@ export default function HomeClient({ initialMatches, initialNews }: HomeClientPr
             {/* Images side */}
             <div className="mandela-images">
               <div className="mandela-img-main">
-                <img src="https://zubericup.com/Uwanjarailway3.jpg" alt="Uwanja wa Mandela - Mtazamo Mkuu" />
+                <img src="https:/images/Uwanjarailway3.jpg" alt="Uwanja wa Mandela - Mtazamo Mkuu" />
                 <div className="mandela-img-tag">Mradi Mkuu · 2026</div>
                 <div className="mandela-stamp">INAJENGWA</div>
               </div>
               <div className="mandela-img-a">
-                <img src="https://zubericup.com/Uwanjarailway.jpg" alt="Viwango vya Kimataifa" />
+                <img src="https:/images/Uwanjarailway.jpg" alt="Viwango vya Kimataifa" />
                 <div className="mandela-img-tag">Viwango vya FIFA</div>
               </div>
               <div className="mandela-img-b">
-                <img src="https://zubericup.com/Mstahikimeya.jpg" alt="Meya Zuberi Kidumo" />
+                <img src="https:/images/Mstahikimeya.jpg" alt="Meya Zuberi Kidumo" />
                 <div className="mandela-img-tag">Msimamizi Mkuu</div>
               </div>
             </div>
@@ -574,7 +574,7 @@ export default function HomeClient({ initialMatches, initialNews }: HomeClientPr
                 <div className="mp-item">
                   <div className="mp-header">
                     <span className="mp-label">Viti vya Mashabiki</span>
-                    <span className="mp-pct">60%</span>
+                    <span className="mp-pct">40%</span>
                   </div>
                   <div className="mp-bar-bg">
                     <div className="mp-bar-fill" style={{ width: '60%' }} />
@@ -583,7 +583,7 @@ export default function HomeClient({ initialMatches, initialNews }: HomeClientPr
                 <div className="mp-item">
                   <div className="mp-header">
                     <span className="mp-label">Mwanga & Teknolojia</span>
-                    <span className="mp-pct">40%</span>
+                    <span className="mp-pct">30%</span>
                   </div>
                   <div className="mp-bar-bg">
                     <div className="mp-bar-fill" style={{ width: '40%' }} />

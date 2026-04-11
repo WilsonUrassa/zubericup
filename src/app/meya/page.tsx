@@ -20,7 +20,7 @@ export default function MeyaPage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
           <div style={{ position: 'relative', aspectRatio: '3/4', overflow: 'hidden' }}>
             <img
-              src="https://zubericup.com/meya.jpg"
+              src="https:/images/meya.jpg"
               alt="Meya Zuberi Abdallah Kidumo"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
@@ -69,12 +69,12 @@ export default function MeyaPage() {
         </div>
         <div style={{ maxWidth: '1200px', margin: '40px auto 0', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '3px' }}>
           {[
-            { src: 'https://zubericup.com/Mstahikimeya.jpg', cap: 'Mstahiki Meya akisimama na timu' },
-            { src: 'https://zubericup.com/Meyanakombe.jpg', cap: 'Meya na Kombe la Ushindi' },
-            { src: 'https://zubericup.com/meyanamarafiki2.jpg', cap: 'Meya na mashabiki' },
-            { src: 'https://zubericup.com/keki.jpg', cap: 'Ufunguzi Rasmi' },
-            { src: 'https://zubericup.com/wadau.jpg', cap: 'Mkutano wa Wadau' },
-            { src: 'https://zubericup.com/washindi.jpg', cap: 'Ushindi wa Afro Boys FC' },
+            { src: 'https:/images/Mstahikimeya.jpg', cap: 'Mstahiki Meya akisimama na timu' },
+            { src: 'https:/images/Meyanakombe.jpg', cap: 'Meya na Kombe la Ushindi' },
+            { src: 'https:/images/meyanamarafiki2.jpg', cap: 'Meya na mashabiki' },
+            { src: 'https:/images/keki.jpg', cap: 'Ufunguzi Rasmi' },
+            { src: 'https:/images/wadau.jpg', cap: 'Mkutano wa Wadau' },
+            { src: 'https:/images/washindi.jpg', cap: 'Ushindi wa Afro Boys FC' },
           ].map((g, i) => (
             <div key={i} className="gallery-item" style={{ height: '260px' }}>
               <img src={g.src} alt={g.cap} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />

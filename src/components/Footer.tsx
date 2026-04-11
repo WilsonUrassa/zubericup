@@ -35,11 +35,11 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <div className="footer-copy">© 2025 Zuberi Cup Tournament · Haki zote zimehifadhiwa</div>
+        <div className="footer-copy">© 2026 Zuberi Cup Tournament · Haki zote zimehifadhiwa</div>
         <div className="social-links">
-          <a className="social-link" href="#" title="Facebook">f</a>
-          <a className="social-link" href="#" title="Instagram">ig</a>
-          <a className="social-link" href="#" title="YouTube">▶</a>
+          <a className="social-link" href="https://www.facebook.com/profile.php?id=61578006434301" title="Facebook">f</a>
+          <a className="social-link" href="https://www.instagram.com/zubericup/" title="Instagram">ig</a>
+          <a className="social-link" href="https://www.youtube.com/@zubericup" title="YouTube">▶</a>
         </div>
       </div>
     </footer>

@@ -9,7 +9,7 @@ export default function Hero() {
         <polygon points="450,10 560,120 680,90 780,130 900,130 900,200 0,200 0,130 120,130 220,90 340,120" />
       </svg>
       <div className="hero-content">
-        <div className="hero-eyebrow">Kilimanjaro Region · Msimu wa Tano · 2025</div>
+        <div className="hero-eyebrow">Kilimanjaro Region · Msimu wa Sita · 2026</div>
         <h1 className="hero-title">ZUBERI<br /><span>CUP</span></h1>
         <p className="hero-subtitle">Mchuano mkuu unaoleta timu bora zaidi za Kilimanjaro</p>
         <div className="hero-btns">

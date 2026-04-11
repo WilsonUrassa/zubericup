@@ -21,7 +21,7 @@ function MatchCard({ match }: { match: Match }) {
   return (
     <div className={`match-card ${match.status === 'live' ? 'live-card' : ''}`}>
       <div className="card-top">
-        <div className="card-competition">Zuberi Cup 2025</div>
+        <div className="card-competition">Zuberi Cup 2026</div>
         <div className={`card-status ${match.status}`}>
           {match.status === 'live' ? 'LIVE' : match.status === 'ft' ? 'FT' : 'INAKUJA'}
         </div>
