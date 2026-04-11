@@ -526,7 +526,7 @@ export default function HomeClient({ initialMatches, initialNews }: HomeClientPr
             {/* Images side */}
             <div className="mandela-images">
               <div className="mandela-img-main">
-                <img src="https:/images/uwanjarailway3.jpg" alt="Uwanja wa Mandela - Mtazamo Mkuu" />
+                <img src="https:/images/zuberi.jpeg" alt="Mdhamini Mkuu wa Mashindano - Eng. Zuberi Kidumo" />
                 <div className="mandela-img-tag">Mradi Mkuu · 2026</div>
                 <div className="mandela-stamp">INAJENGWA</div>
               </div>
@@ -535,7 +535,7 @@ export default function HomeClient({ initialMatches, initialNews }: HomeClientPr
                 <div className="mandela-img-tag">Viwango vya FIFA</div>
               </div>
               <div className="mandela-img-b">
-                <img src="https:/images/mstahikimeya.jpg" alt="Meya Zuberi Kidumo" />
+                <img src="https:/images/mstahikimeya.png" alt="Meya Zuberi Kidumo" />
                 <div className="mandela-img-tag">Msimamizi Mkuu</div>
               </div>
             </div>
