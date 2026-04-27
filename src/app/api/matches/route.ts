@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServiceClient } from '@/lib/supabase-server';
 import { verifyToken } from '@/lib/auth';
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 function auth(req: NextRequest): boolean {
   const token = req.headers.get('x-admin-token');
   return verifyToken(token);
