@@ -19,7 +19,7 @@ export default function Nav({ onAdminOpen }: NavProps) {
       <nav>
         <div className="nav-logo" onDoubleClick={handleLogoDoubleClick} title="Double-click for admin">
           <Image
-            src="https://zubericup.com/logozuberi.jpg"
+            src="https://zubericup.com/logo.png"
             alt="Zuberi Cup"
             width={44}
             height={44}
