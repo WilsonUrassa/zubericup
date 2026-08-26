@@ -9,5 +9,22 @@ export default async function HomePage() {
     fetchNews().catch(() => []),
   ]);
 
-  return <HomeClient initialMatches={matches} initialNews={news} />;
+  // 2026 championship winner is core-coded so the live homepage
+  // does not depend on stale 2025 Supabase featured-news data.
+  const championshipNews = {
+    id: -2026,
+    title: 'Kili Wonders SC Wachukua Ubingwa wa Zuberi Cup 2026',
+    description: 'Kili Wonders SC ndio Mabingwa wa Zuberi Cup 2026.',
+    image_url: 'https://zubericup.com/washindi.jpg',
+    tag: 'Mabingwa 2026',
+    news_date: '2026-08-26',
+    featured: true,
+  };
+
+  const currentNews = [
+    championshipNews,
+    ...news.filter((item) => !/Afro Boys FC.*Ubingwa|Ubingwa.*Afro Boys FC/i.test(item.title)),
+  ];
+
+  return <HomeClient initialMatches={matches} initialNews={currentNews} />;
 }
