@@ -74,7 +74,7 @@ export default function MeyaPage() {
             { src: 'https:/images/meyanamarafiki2.jpg', cap: 'Meya na mashabiki' },
             { src: 'https:/images/keki.jpg', cap: 'Ufunguzi Rasmi' },
             { src: 'https:/images/wadau.jpg', cap: 'Mkutano wa Wadau' },
-            { src: 'https:/images/washindi.jpg', cap: 'Ushindi wa Afro Boys FC' },
+            { src: 'https:/images/washindi.jpg', cap: 'Mabingwa wa Zuberi Cup 2026 — Kili Wonders SC' },
           ].map((g, i) => (
             <div key={i} className="gallery-item" style={{ height: '260px' }}>
               <img src={g.src} alt={g.cap} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
