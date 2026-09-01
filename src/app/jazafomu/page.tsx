@@ -44,9 +44,9 @@ export default function JazaFormuPage() {
 
       <div className="page-hero">
         <div className="container">
-          <div className="section-label">Zuberi Cup 2025</div>
+          <div className="section-label">Zuberi Cup 2026</div>
           <h1 className="section-title">JAZA <span>FOMU</span></h1>
-          <p className="body-text">Jiandikishe kushiriki Zuberi Cup msimu ujao. Jaza fomu hapa chini na tutawasiliana nawe.</p>
+          <p className="body-text">Jiandikishe kushiriki Zuberi Cup msimu huu. Jaza fomu hapa chini na tutawasiliana nawe.</p>
         </div>
       </div>
 
@@ -129,7 +129,6 @@ export default function JazaFormuPage() {
             </div>
           </form>
 
-          {/* Info box */}
           <div style={{
             marginTop: '60px', background: 'rgba(26,107,42,0.15)',
             border: '1px solid rgba(232,180,22,0.2)', padding: '28px',
