@@ -52,9 +52,9 @@ export default async function MakundiPage() {
       <Nav />
       <div className="page-hero">
         <div className="container">
-          <div className="section-label">Mchuano wa Kilimanjaro 2025</div>
+          <div className="section-label">Mchuano wa Kilimanjaro 2026</div>
           <h1 className="section-title">MSIMAMO WA <span>TIMU</span></h1>
-          <p className="body-text">Jedwali la msimamo la timu zote zinazoshiriki Zuberi Cup 2025.</p>
+          <p className="body-text">Jedwali la msimamo la timu zote zinazoshiriki Zuberi Cup 2026.</p>
         </div>
       </div>
 
