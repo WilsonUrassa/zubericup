@@ -65,6 +65,7 @@ export async function fetchNews(): Promise<NewsItem[]> {
   const { data, error } = await supabase
     .from('news')
     .select('*')
+    .gte('news_date', '2026-01-01')
     .order('news_date', { ascending: false });
   if (error) throw error;
   return data || [];
