@@ -60,16 +60,11 @@ alter table scorers       enable row level security;
 alter table news          enable row level security;
 alter table registrations enable row level security;
 
--- Public can read matches, scorers, news
 create policy "public_read_matches"  on matches       for select using (true);
 create policy "public_read_scorers"  on scorers       for select using (true);
 create policy "public_read_news"     on news          for select using (true);
 
--- Only service role (server-side API) can write — achieved by NOT adding
--- anon insert/update/delete policies. The server uses the service_role key
--- which bypasses RLS entirely.
-
--- Registrations: anyone can insert (public form), only service role can read
+-- Only service role (server-side API) can write.
 create policy "public_insert_registrations" on registrations for insert with check (true);
 
 -- ============================================================
@@ -82,7 +77,7 @@ alter publication supabase_realtime add table scorers;
 -- SEED DATA — initial matches for testing
 -- ============================================================
 insert into matches (team_a, team_b, score_a, score_b, minute, status, venue, match_date) values
-  ('Afro Boys FC',    'Eagle FC',          2, 1, 67, 'live',     'Uwanja wa Railway', current_date),
+  ('Kili Wonders SC', 'Eagle FC',          2, 1, 67, 'live',     'Uwanja wa Railway', current_date),
   ('Pasua Big Stars', 'Msaranga FC',       1, 1, 45, 'live',     'Uwanja wa Railway', current_date),
   ('Kili Wonders FC', 'Moshi United FC',   0, 0,  0, 'upcoming', 'Uwanja wa Railway', current_date);
 
@@ -94,12 +89,12 @@ insert into scorers (match_id, team_side, player_name, minute) values
   (2, 'B', 'S. Shayo',  33);
 
 insert into news (title, description, image_url, tag, news_date, featured) values
-  ('Afro Boys FC achukua Ubingwa wa Mashindano ya Zuberi Cup 2025',
-   'Timu ya Afro Boys FC yatinga fainali na kuchukua ubingwa dhidi ya Pasua Big Stars kwenye msimu wa Tano.',
-   'https://zubericup.com/washindi.jpg', 'Ubingwa', '2025-09-26', true),
-  ('Mgeni Rasmi wa Fainali — Bi. Mwajuma Nasombe',
-   'Bi Mwajuma Nasimbe amefika uwanjani kushuhudia fainali.',
-   'https://zubericup.com/meya.jpg', 'Fainali', '2025-09-26', false),
-  ('Msaranga FC ashika Nafasi ya Tatu',
-   'Msaranga FC ameshika nafasi ya Mshindi wa Tatu baada ya Kuwacharaza Kili Wonders FC 2–0.',
-   'https://zubericup.com/uwanja.jpg', 'Matokeo', '2025-09-25', false);
+  ('Kili Wonders SC achukua Ubingwa wa Mashindano ya Zuberi Cup 2026',
+   'Timu ya Kili Wonders SC imechukua ubingwa wa Zuberi Cup 2026.',
+   'https://zubericup.com/washindi.jpg', 'Ubingwa', '2026-08-26', true),
+  ('Eng. Zuberi Kidumo aahidi Michuano ya ZUBERI CUP 2026',
+   'Eng. Zuberi Kidumo ameahidi mashindano ya Zuberi Cup 2026 ndani ya Mkoa wa Kilimanjaro kuwa ya kihistoria.',
+   'https://zubericup.com/meya.jpg', 'Mchuano', '2026-04-12', false),
+  ('Washindi wa Zuberi Cup 2026 kuondoka na Pesa Taslimu pamoja na Tuzo',
+   'Washindi wa Zuberi Cup Season 6 kuondoka na zawadi na tuzo.',
+   'https://zubericup.com/uwanja.jpg', 'Matokeo', '2026-04-12', false);
