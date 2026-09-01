@@ -1,4 +1,4 @@
-# ⚽ Zuberi Cup 2025 — Full-Stack Website
+# ⚽ Zuberi Cup 2026 — Full-Stack Website
 
 > Mchuano wa Kilimanjaro · Next.js 14 + Supabase + Vercel
 
@@ -58,23 +58,7 @@ zubericup/
 
 ### Step 3 — Configure Environment Variables
 
-Copy `.env.example` to `.env.local`:
-
-```bash
-cp .env.example .env.local
-```
-
-Fill in the values from your Supabase project (**Settings → API**):
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=https://xxxxxxxxxxxx.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6...
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6...
-ADMIN_PASSWORD=zuberi2025
-ADMIN_SESSION_SECRET=pick-any-long-random-string-here-32chars
-```
-
-> ⚠️ **Never commit `.env.local` to git.** The `SUPABASE_SERVICE_ROLE_KEY` gives full database access.
+Copy `.env.example` to `.env.local` and fill in your Supabase values.
 
 ### Step 4 — Run Locally
 
@@ -83,7 +67,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open http://localhost:3000
 
 ### Step 5 — Deploy to Vercel
 
@@ -92,11 +76,7 @@ npm install -g vercel
 vercel
 ```
 
-Or via the Vercel dashboard:
-1. Push your code to GitHub
-2. Import the repo at [vercel.com/new](https://vercel.com/new)
-3. Add **all 5 environment variables** in Vercel → Settings → Environment Variables
-4. Click **Deploy**
+Or import the repository through the Vercel dashboard and add the required environment variables.
 
 ---
 
@@ -109,43 +89,26 @@ The admin panel lets you control all live match data in real time.
 | Keyboard shortcut | `Ctrl + Shift + A` |
 | Double-click nav logo | Works on all pages |
 
-**Default password:** `zuberi2025`  
-(Change `ADMIN_PASSWORD` in your env vars)
-
 ### What you can do:
 - ✅ Add / remove matches
 - ✅ Update scores, minute, match status (Live / FT / Upcoming)
 - ✅ Log goal scorers (name + minute)
-- ✅ Remove individual scorers (auto-decrements score)
-- ✅ All changes sync to Supabase → pushed to all connected clients in real time
+- ✅ Remove individual scorers
+- ✅ All changes sync to Supabase in real time
 
 ---
 
 ## ⚡ Real-time Updates
 
-The site uses **Supabase Realtime** (PostgreSQL change subscriptions) + a **10-second polling fallback**.
-
-When a goal is scored via the admin panel:
-1. Database updates instantly
-2. All open browser tabs receive the change via WebSocket
-3. A **goal toast notification** appears on screen
-4. The ticker bar updates with the new score
-
----
+The site uses Supabase Realtime (PostgreSQL change subscriptions) plus a polling fallback.
 
 ## 📊 Standings (Msimamo)
 
-The `/makundi` page **auto-calculates** the standings table from all completed (`status = 'ft'`) matches in the database. No manual input needed — just mark matches as finished and the table updates.
-
----
+The `/makundi` page auto-calculates the standings table from completed matches in the database.
 
 ## 📝 Team Registration (Jaza Fomu)
 
-The `/jazafomu` page saves registrations to the `registrations` table in Supabase. You can view all submissions in:
-
-**Supabase Dashboard → Table Editor → registrations**
-
----
+The `/jazafomu` page saves registrations to the `registrations` table in Supabase.
 
 ## 🛠 Tech Stack
 
@@ -154,27 +117,16 @@ The `/jazafomu` page saves registrations to the `registrations` table in Supabas
 | Framework | Next.js 14 (App Router) |
 | Database | Supabase (PostgreSQL) |
 | Realtime | Supabase Realtime (WebSocket) |
-| Auth | HMAC-signed admin tokens (no external service) |
+| Auth | HMAC-signed admin tokens |
 | Hosting | Vercel |
-| Styling | Pure CSS (no Tailwind needed) |
-| Fonts | Bebas Neue + Barlow Condensed via Google Fonts |
-
----
+| Styling | Pure CSS |
+| Fonts | Bebas Neue + Barlow Condensed |
 
 ## 🌍 Pages
 
 | Route | Description |
 |---|---|
 | `/` | Home — hero, live matches, news, gallery, venue, sponsors |
-| `/makundi` | Auto-calculated standings table |
+| `/makundi` | 2026 standings table |
 | `/meya` | Mayor profile + photo gallery |
-| `/jazafomu` | Team registration form |
-
----
-
-## 💡 Tips
-
-- **Add news:** directly in Supabase Table Editor → `news` table
-- **Add photos:** change image URLs in `HomeClient.tsx` gallery section
-- **Change champion:** edit the `champion-banner` div in `HomeClient.tsx`
-- **Change admin password:** update `ADMIN_PASSWORD` env var (no code change needed)
+| `/jazafomu` | 2026 team registration form |
