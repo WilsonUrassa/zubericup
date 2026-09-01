@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Zuberi Cup 2026 — Mashindano Makubwa ya Soka Mkoani Kilimanjaro',
   description: 'Mashindano Makubwa ya Soka Mkoani Kilimanjaro. yanayodhaminiwa na Mstahiki Meya Zuberi Abdallah Kidumo.',
   openGraph: {
-    title: 'Zuberi Cup 2025',
+    title: 'Zuberi Cup 2026',
     description: 'Mchuano wa Kilimanjaro',
     images: ['https://zubericup.com/logozuberi.jpg'],
   },
