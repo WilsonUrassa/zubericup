@@ -41,13 +41,13 @@ export default function MeyaPage() {
               Kama kiongozi anayependa michezo na maendeleo ya vijana, alianzisha Zuberi Cup mwaka 2021 kwa lengo la kutoa fursa kwa vijana wa Kilimanjaro kucheza mpira wa miguu kwa viwango vya juu.
             </p>
             <p className="body-text">
-              Chini ya uongozi wake, mchuano umekua kutoka timu 16 mwaka wa kwanza hadi timu 40 msimu wa 2025, ukivutia mashabiki zaidi ya 1,000 kila mwaka.
+              Chini ya uongozi wake, mchuano umekua kutoka timu 16 mwaka wa kwanza hadi timu 40 msimu wa 2026, ukivutia mashabiki zaidi ya 1,000 kila mwaka.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '32px' }}>
               {[
-                { val: '5', key: 'Misimu ya Mchuano' },
-                { val: '40', key: 'Timu 2025' },
+                { val: '6', key: 'Misimu ya Mchuano' },
+                { val: '40', key: 'Timu 2026' },
                 { val: '1000+', key: 'Mashabiki' },
                 { val: '2021', key: 'Mwaka wa Kuanzishwa' },
               ].map(s => (
